@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: fantasy;
+    color: whitesmoke;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f0c29;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #02020a, #332d69, #0c0921);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #161627, #24204a, #1c174a);
+}
+
+.container {
+    margin: 20px;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border-radius: 24px;
+}
+
+.clock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+
+}
+
+.datebox {
+    text-align: center;
+    padding-bottom: 12px;
+    font-size: 24px;
+}
+
+
+.clock span {
+    font-size: 80px;
+}
+
+#line {
+    letter-spacing: -2px;
+    margin: -14px 0 -14px;
+    font-size: 18px;
+}
