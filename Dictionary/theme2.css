@@ -1,0 +1,219 @@
+/* =====================================================
+   THEME VARIABLES (Easy to maintain & scalable)
+   ===================================================== */
+:root {
+  --bg-main: #020617;
+  --bg-card: #0f172a;
+  --bg-input: #020617;
+
+  --border: #1e293b;
+
+  --text-main: #e5e7eb;
+  --text-muted: #94a3b8;
+
+  --accent: #38bdf8;
+  --accent-strong: #2563eb;
+
+  --error: #ef4444;
+}
+
+/* =====================================================
+   GLOBAL RESET
+   ===================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   BODY
+   ===================================================== */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #020617, #020617);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* =====================================================
+   MAIN CONTAINER
+   ===================================================== */
+main {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 24px;
+  background: var(--bg-main);
+  border-radius: 18px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+/* =====================================================
+   SEARCH SECTION
+   ===================================================== */
+.search-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-box h1 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.search-cont {
+  position: relative;
+  width: 100%;
+}
+
+/* =====================================================
+   INPUT
+   ===================================================== */
+.input {
+  width: 100%;
+  padding: 14px 120px 14px 14px;
+  font-size: 1rem;
+  color: var(--text-main);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+/* =====================================================
+   SEARCH BUTTON
+   ===================================================== */
+.btn {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  right: 6px;
+  padding: 0 18px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* =====================================================
+   LOADER
+   ===================================================== */
+.loader {
+  width: 44px;
+  height: 44px;
+  border: 4px solid #1f2937;
+  border-top: 4px solid var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 32px auto;
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   RESULT BOX
+   ===================================================== */
+.result-box {
+    flex-direction: column;
+  margin-top: 28px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: none;
+  gap: 16px;
+}
+
+/* =====================================================
+   FLEX ROW
+   ===================================================== */
+.flex {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  /* flex-direction: column; */
+}
+
+/* Accent line */
+.spn {
+  width: 4px;
+  border-radius: 6px;
+  align-self: stretch;
+  background: var(--accent);
+}
+
+/* =====================================================
+   TEXT STYLES
+   ===================================================== */
+.word {
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+
+.phonetic {
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+.meanings {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+.example {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* =====================================================
+   AUDIO PLAYER
+   ===================================================== */
+audio {
+  /* width: 100%; */
+  margin-top: 6px;
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* =====================================================
+   ERROR BOX
+   ===================================================== */
+#error-box {
+  margin-top: 24px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid var(--error);
+  display: none;
+}
+
+.error {
+  color: var(--error);
+  font-weight: 600;
+}
