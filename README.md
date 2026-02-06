@@ -13,6 +13,8 @@ A personal collection of frontend mini projects developed with HTML, CSS, and Ja
 - Prepare for web development internships
 
 ## Projects Included
+- Quiz App
+- Dictonary App
 - Password Validation Checker
 - Random Password Generator
 - Weather App (API based)
