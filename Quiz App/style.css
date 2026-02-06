@@ -1,0 +1,297 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+    /* Colors */
+    --bg-page: #3cffb2;
+    --bg-main: #0b0b0b;
+    --bg-card: #141414;
+    --green-primary: #3cffb2;
+    --green-soft: rgba(60, 255, 178, 0.35);
+    --green-dark: #1e7a57;
+    --text-main: #ffffff;
+    --text-muted: #b5b5b5;
+    --error-red: #ff4d4d;
+
+    /* Sizes */
+    --radius-lg: 28px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+
+    /* Shadows */
+    --shadow-green: 0 0 35px rgba(60, 255, 178, 0.35);
+    --shadow-red: 0 0 25px rgba(255, 77, 77, 0.4);
+
+    /* Transitions */
+    --transition-fast: 0.25s ease;
+}
+
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+    min-height: 100vh;
+    background: var(--bg-page);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text-main);
+}
+
+/* ================= MAIN CONTAINER ================= */
+.main {
+    width: 100%;
+    max-width: 900px;
+    /* BIG & LONG */
+    min-height: 560px;
+    background: var(--bg-main);
+    border-radius: var(--radius-lg);
+    padding: 40px 48px;
+    box-shadow: var(--shadow-green);
+    position: relative;
+}
+
+/* ================= SCREEN VISIBILITY ================= */
+.start-card,
+#quiz-screen,
+#result-screen,
+#error-screen {
+    display: none;
+}
+
+/* default screen */
+.start-card {
+    display: block;
+    text-align: center;
+}
+
+/* ================= START SCREEN ================= */
+.start-card h1 {
+    font-size: 34px;
+    margin-bottom: 30px;
+    color: var(--green-primary);
+}
+
+#start-btn,
+#restart-btn {
+    padding: 16px 50px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg,
+            var(--green-primary),
+            #2bd99a);
+    color: #003322;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition-fast);
+    box-shadow: 0 0 15px var(--green-soft);
+}
+
+#start-btn:hover,
+#restart-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px var(--green-soft);
+}
+
+/* ================= QUIZ HEADER ================= */
+.times-count {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+}
+
+#timer {
+    color: var(--green-primary);
+    font-weight: 600;
+}
+
+/* ================= QUESTION ================= */
+#question h1 {
+    font-size: 22px;
+    line-height: 1.4;
+    margin-bottom: 28px;
+}
+
+.que-no {
+    color: var(--green-primary);
+}
+
+/* ================= ANSWERS ================= */
+#answer-box {
+    display: grid;
+    gap: 16px;
+}
+
+.answer {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    background: var(--bg-card);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: var(--transition-fast);
+}
+
+.answer:hover {
+    border-color: var(--green-primary);
+    box-shadow: 0 0 10px var(--green-soft);
+}
+
+.answer input {
+    accent-color: var(--green-primary);
+    transform: scale(1.2);
+}
+
+/* Correct / Wrong */
+.answer.correct {
+    background: var(--green-dark);
+    border-color: var(--green-primary);
+}
+
+.answer.wrong {
+    background: #3a1414;
+    border-color: var(--error-red);
+}
+
+/* ================= RESULT SCREEN ================= */
+#result-screen {
+    /* display: none; */
+    text-align: center;
+}
+
+/* ================= SCORE CIRCLE ================= */
+#circle_percent {
+    width: 220px;
+    height: 220px;
+    margin: 40px auto;
+    border-radius: 50%;
+    background: conic-gradient(var(--green-primary) 0deg,
+            var(--green-primary) 260deg,
+            #1a1a1a 260deg,
+            #1a1a1a 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: var(--shadow-green);
+}
+
+#circle_percent::before {
+    content: "";
+    width: 155px;
+    height: 155px;
+    background: var(--bg-main);
+    border-radius: 50%;
+    position: absolute;
+}
+
+#final-score {
+    position: relative;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--green-primary);
+}
+
+/* ================= ERROR SCREEN ================= */
+#error-screen {
+    text-align: center;
+    padding: 40px;
+    background: #1a0b0b;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--error-red);
+    box-shadow: var(--shadow-red);
+}
+
+#error-screen h2 {
+    color: var(--error-red);
+    font-size: 22px;
+    line-height: 1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .main {
+        padding: 28px;
+        min-height: auto;
+    }
+
+    #question h1 {
+        font-size: 20px;
+    }
+
+    #circle_percent {
+        width: 190px;
+        height: 190px;
+    }
+
+    #circle_percent::before {
+        width: 135px;
+        height: 135px;
+    }
+}
+
+/* ================= LOADING SCREEN ================= */
+#loading-screen {
+    display: none;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+
+#loading-screen h2 {
+    color: var(--green-primary);
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+/* Spinner */
+.loader {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 6px solid #1a1a1a;
+    border-top: 6px solid var(--green-primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media (max-width: 480px) {
+    .main {
+        padding: 22px;
+    }
+
+    .start-card h1 {
+        font-size: 28px;
+    }
+
+    #start-btn {
+        padding: 14px 38px;
+        font-size: 16px;
+    }
+}

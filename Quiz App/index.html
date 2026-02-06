@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        
+        <div id="loading-screen">
+            <h2>Loading Questions...</h2>
+            <div class="loader"></div>
+        </div>
+
+
+
+        <div class="start-card">
+            <div class="center">
+                <h1>Start Quiz Here</h1>
+                <button id="start-btn"> Click Here </button>
+            </div>
+        </div>
+
+        <div id="quiz-screen">
+
+            <div class="times-count">
+                <div id="time-consumed"> Time Consumed: 00 : 00 sec</div>
+                <div id="question-count">6/10 question</div>
+                <div id="timer"> 30 sec Left</div>
+            </div>
+
+            <div id="question">
+                <h1 id="que-select"> <span id="que-no">Q1 </span>dummy Question</h1>
+            </div>
+
+            <div id="answer-box">
+
+                <div class="answer" id="opt-1">
+                    <input type="radio" name="answer">
+                    <span class="opt-text">option ggg</span>
+                </div>
+                <div class="answer" id="opt-2">
+                    <input type="radio" name="answer">
+                    <span class="opt-text">option ggg</span>
+                </div>
+                <div class="answer" id="opt-3">
+                    <input type="radio" name="answer">
+                    <span class="opt-text">option ggg</span>
+                </div>
+                <div class="answer" id="opt-4">
+                    <input type="radio" name="answer">
+                    <span class="opt-text">option ggg</span>
+                </div>
+
+
+                <!-- <div class="answer " id="opt-1"> <input id="inp-1" type="radio"> option 1</div>
+                <div class="answer " id="opt-2"> <input id="inp-2" type="radio"> option 1</div>
+                <div class="answer" id="opt-3"> <input id="inp-3" type="radio"> option 1</div>
+                <div class="answer" id="opt-4"> <input id="inp-4" type="radio"> option 1</div> -->
+            </div>
+
+        </div>
+
+        <div id="result-screen">
+            <div id="circle_percent">
+                <div id="final-score">
+                    70%
+                </div>
+
+            </div>
+            <div class="center">
+                <h1>Restart Quiz</h1>
+                <button id="restart-btn"> Click Here </button>
+            </div>
+        </div>
+
+        <div id="error-screen">
+            <h2>Erro message api faliled network failed or other </h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
