@@ -13,6 +13,7 @@ A personal collection of frontend mini projects developed with HTML, CSS, and Ja
 - Prepare for web development internships
 
 ## Projects Included
+- Github Profile Searcher
 - Quiz App
 - Dictonary App
 - Password Validation Checker
